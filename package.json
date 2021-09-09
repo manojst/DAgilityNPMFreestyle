@@ -1,0 +1,20 @@
+{
+  "name": "npmworkspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-js": "browserify js/**.js>build/js/script.min.js",
+    "build": "npm run build-js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "nodemon": "^2.0.12",
+    "node-sass": "0.0.2-security"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
