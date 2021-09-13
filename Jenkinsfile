@@ -1,7 +1,5 @@
 pipeline {
-  agent any
-    
-  tools {nodejs "node"}
+  agent
     
   stages {
         
@@ -14,14 +12,12 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm install'
-        sh 'npm run build'
       }
-    }  
-    
+    }      
             
     stage('Test') {
       steps {
-        sh 'node test'
+        sh './jenkins/scripts/test.sh'
       }
     }
   }
