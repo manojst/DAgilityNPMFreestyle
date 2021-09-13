@@ -1,5 +1,5 @@
 pipeline {
-  agent {    
+  agent any {    
     stage('Git') {
       steps {
         git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilitynpmfreestyle.git'
