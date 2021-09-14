@@ -11,6 +11,7 @@ node{
         //Get maven home path
         //def npmHome = tool name: 'npm', type: 'npm'
         //sh "cd ${WORKSPACE}/dagilitynpmfreestyle;"
+        sh "npm install"
         sh "npm run build"        
     }
 }
