@@ -10,6 +10,6 @@ node{
     stage('Compile-Package'){
         //Get maven home path
         //def npmHome = tool name: 'npm', type: 'npm'
-        sh "cd ${WORKSPACE}/dagilitynpmfreestyle/; ${npmHome}/npm build"        
+        sh "cd ${WORKSPACE}/dagilitynpmfreestyle/npm run build"        
     }
 }
