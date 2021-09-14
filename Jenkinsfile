@@ -7,11 +7,8 @@ node{
     stage('read package JSON'){
         readfile = readFile 'package.json';
     }
-    stage('Compile-Package'){
-        //Get maven home path
-        //def npmHome = tool name: 'npm', type: 'npm'
-        //sh "cd ${WORKSPACE}/dagilitynpmfreestyle;"
+    withNPM(npmrcConfig: 'my-custom-nprc') {
         sh "npm install"
-        sh "npm run build"        
+        sh "npm run build"
     }
 }
