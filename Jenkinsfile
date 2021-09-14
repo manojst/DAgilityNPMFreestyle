@@ -1,19 +1,15 @@
-pipeline {  
-  agent any
-      
-  stage('Git') {
-    steps {
-      git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilitynpmfreestyle.git'
+def readfile;
+node{
+    stage('SCM Checkout'){
+        
+        git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilitynpmfreestyle'
     }
-  }     
-  stage('Build') {
-    steps {
-      sh 'npm install'
+    stage('read package JSON'){
+        readfile = readFile 'package.json';
     }
-  }                  
-  stage('Test') {
-    steps {
-      sh './jenkins/scripts/test.sh'
+    stage('Compile-Package'){
+        //Get maven home path
+        //def npmHome = tool name: 'npm', type: 'npm'
+        sh "cd ${WORKSPACE}/dagilitynpmfreestyle/; ${npmHome}/npm build"        
     }
-  }  
 }
