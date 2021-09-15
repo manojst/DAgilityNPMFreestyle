@@ -10,9 +10,9 @@ pipeline {
     stages {
          stage('Required dependancies') {
              steps {
-                 sh 'npm install'
+                 sh 'sudo yum install -y nodejs'
                  sh 'node --version' 
-                 sh 'npm --version'
+                 sh 'npm -version'
              }
          }
          stage('Test') {
