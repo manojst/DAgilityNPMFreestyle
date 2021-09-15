@@ -13,8 +13,7 @@ pipeline {
                  sh 'npm install'
                  sh 'node --version' 
                  sh 'npm -version'
-                 sh 'npm init'
-                 sh 'npm i node-sass nodemon browserify --save-dev'
+                 sh 'npm init'                 
              }
          }
          stage('Test') {
